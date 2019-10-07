@@ -1,0 +1,4 @@
+name: console-app
+version: "1.0.0"
+commands:
+  - ConsoleApp\Console\Command\RssReaderCommand

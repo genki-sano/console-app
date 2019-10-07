@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+
+use ConsoleApp\Console\Application;
+use Symfony\Component\Yaml\Yaml;
+use Zend\ServiceManager\ServiceManager;
+
+require_once __DIR__ . '/Function.php';
+require_once __DIR__ . '/vendor/autoload.php';
+
+$configure = require_once __DIR__ . '/config/factory.php';
+
+$serviceManager = new ServiceManager();
+$serviceManager->setService('config', Yaml::parse(file_get_contents(__DIR__ . '/config/config.yaml')));
+$serviceManager->setService('path', __DIR__);
+$serviceManager->configure($configure);
+
+$app = new Application($serviceManager);
+
+$app->run();

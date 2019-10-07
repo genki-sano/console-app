@@ -1,0 +1,13 @@
+{
+    "require": {
+        "php": ">=7.0",
+        "symfony/console": "^3.4",
+        "symfony/yaml": "^3.4",
+        "zendframework/zend-servicemanager": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "ConsoleApp\\Console\\": "src/"
+        }
+    }
+}

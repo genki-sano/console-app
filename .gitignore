@@ -2,5 +2,6 @@ composer.lock
 composer.phar
 /vendor/
 /storage/*
+!/storage/
 *.DS_Store
 .idea

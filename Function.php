@@ -57,3 +57,37 @@ function h($text, $double = true, $charset = 'UTF-8')
 
     return htmlspecialchars($text, ENT_QUOTES, $charset, $double);
 }
+
+/**
+ * プロジェクトルートの完全パスを返却
+ * 指定されたプロジェクトルートディレクトリからの相対パスから絶対パスを生成
+ * @param string $path
+ * @return string
+ */
+function base_path($path = '')
+{
+    return __DIR__ . ($path ? DIRECTORY_SEPARATOR . $path : $path);
+}
+
+/**
+ * strip_tags改良版（改行コードも削除）
+ * @param      $str
+ * @param null $allowable_tags
+ * @return mixed|string
+ */
+function strip_tags_lf($str, $allowable_tags = null)
+{
+    $tmpStr = strip_tags((string)$str, $allowable_tags);
+    $tmpStr = strip_lf($tmpStr);
+    return $tmpStr;
+}
+
+/**
+ * 改行コード(linefeed)を削除
+ * @param mixed $text
+ * @return mixed
+ */
+function strip_lf($text)
+{
+    return str_replace(["\r\n", "\n", "\r"], '', $text);
+}

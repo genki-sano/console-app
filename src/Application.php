@@ -31,10 +31,7 @@ final class Application extends ConsoleApplication
     }
 
     /**
-     * @param InputInterface|null  $input
-     * @param OutputInterface|null $output
-     * @return int
-     * @throws \Exception
+     * {@inheritdoc}
      */
     public function run(InputInterface $input = null, OutputInterface $output = null)
     {

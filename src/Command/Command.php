@@ -15,6 +15,7 @@ abstract class Command extends AbstractCommand
     protected $description;
 
     /**
+     * Execute the console command.
      * @param InputInterface  $input
      * @param OutputInterface $output
      */
@@ -23,17 +24,17 @@ abstract class Command extends AbstractCommand
     /**
      * {@inheritdoc}
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function configure()
     {
-        $this->action($input, $output);
+        $this->setName($this->command);
+        $this->setDescription($this->description);
     }
 
     /**
      * {@inheritdoc}
      */
-    protected function configure()
+    protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->setName($this->command);
-        $this->setDescription($this->description);
+        $this->action($input, $output);
     }
 }

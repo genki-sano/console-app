@@ -1,5 +1,6 @@
 # console-app
-simple console application for PHP.
+
+A simple console application for PHP.
 
 ## Usage
 
